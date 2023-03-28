@@ -1,6 +1,6 @@
-import { IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { IsNotEmpty, IsString } from "class-validator";
 
-export class UpdateCategoryDTO {
+export class CreateGenderDTO {
     id: number;
 
     @IsNotEmpty({
@@ -9,7 +9,6 @@ export class UpdateCategoryDTO {
     @IsString({
         message: "Nome tem que ser string"
     })
-    @IsOptional()
     name: string;
 
 }
