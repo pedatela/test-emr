@@ -28,6 +28,7 @@
 
 ### Projeto feito em Nest e está utilizando o Docker
 
+### Para Testar a Aplicação tem a collection do Insomnia
 
 ## Rodando a aplicação
 
