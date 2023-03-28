@@ -1,0 +1,27 @@
+version: "3"
+services:
+  server:
+    build: .
+    command: node dist/main.js
+    restart: on-failure:10
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/usr/src/app/emr
+      - /usr/src/app/emr/node_modules
+    environment:
+      DB_HOST: postgres
+      DB_USER: postgres
+      DB_PASSWORD: root
+      DB_NAME: emr
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:12.12
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: postgres
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
